@@ -8,16 +8,18 @@ svg.about-us-svg {
 
 @keyframes animate-svg-stroke-dash {
   0% {
-    stroke-dasharray: 5px, 10px; /* Small dashes with small gaps */
+    stroke-dasharray: 2px, 2px; /* Small dashes with small gaps */
     stroke-dashoffset: 0;
   }
   100% {
-    stroke-dasharray: 5px, 10px;
-    stroke-dashoffset: -15px; /* Negative offset for continuous forward motion */
+    stroke-dasharray: 2px, 2px;
+    stroke-dashoffset: -4px; /* Negative offset for continuous forward motion */
   }
 }
 .svg-elem-dash {
-  animation: animate-svg-stroke-dash 0.3s linear infinite; /* Linear timing for smooth flow */
+  stroke-dasharray: 2px;
+  stroke-dashoffset: 2px;
+  animation: animate-svg-stroke-dash 0.6s linear infinite; /* Linear timing for smooth flow */
 }
 
 @keyframes animate-svg-stroke-circle-animation {

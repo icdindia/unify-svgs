@@ -1,43 +1,23 @@
-@keyframes animate-svg-stroke-2 {
-  0% {
-    stroke-dashoffset: 776.1600952148px;
-    stroke-dasharray: 776.1600952148px;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    stroke-dasharray: 776.1600952148px;
-  }
+svg {
+  width: 1440px;
+  height: auto;
 }
-.svg-elem-2 {
-  animation: animate-svg-stroke-2 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
+svg.about-us-svg {
+  margin-top: 100px;
 }
 
-@keyframes animate-svg-stroke-4 {
+@keyframes animate-svg-stroke-dash {
   0% {
-    stroke-dashoffset: 776.1600952148px;
-    stroke-dasharray: 776.1600952148px;
+    stroke-dasharray: 5px, 10px; /* Small dashes with small gaps */
+    stroke-dashoffset: 0;
   }
   100% {
-    stroke-dashoffset: 0;
-    stroke-dasharray: 776.1600952148px;
+    stroke-dasharray: 5px, 10px;
+    stroke-dashoffset: -15px; /* Negative offset for continuous forward motion */
   }
 }
-.svg-elem-4 {
-  animation: animate-svg-stroke-4 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.36s both;
-}
-
-@keyframes animate-svg-stroke-6 {
-  0% {
-    stroke-dashoffset: 725px;
-    stroke-dasharray: 725px;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    stroke-dasharray: 725px;
-  }
-}
-.svg-elem-6 {
-  animation: animate-svg-stroke-6 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.6s both;
+.svg-elem-dash {
+  animation: animate-svg-stroke-dash 0.3s linear infinite; /* Linear timing for smooth flow */
 }
 
 @keyframes animate-svg-stroke-circle-animation {
@@ -50,8 +30,19 @@
     stroke-dasharray: 2603.1381835938px;
   }
 }
+@keyframes animate-svg-stroke-circle-animation {
+  0% {
+    stroke-dashoffset: 2603.138px;
+  }
+  100% {
+    stroke-dashoffset: 0; /* Full circumference */
+  }
+}
 .circle-animation {
-  animation: animate-svg-stroke-circle-animation 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+  animation: animate-svg-stroke-circle-animation 12s linear infinite;
+  stroke-dasharray: 1301.569px;
+  stroke-dashoffset: 1301.569px;
+  stroke-width: 1px;
 }
 
 @keyframes animate-svg-stroke-circle-animation-one {
@@ -97,4 +88,37 @@
 }
 .linearGradient-one {
   animation: rotateAndScaleReverse 4s linear infinite;
+}
+
+.about-us {
+  position: relative;
+}
+
+#box {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#box svg {
+  width: 100% !important;
+}
+
+.green-line {
+  position: absolute;
+  left: 10px;
+  top: 35%;
+  transform: rotate(92deg);
+  /* Ensure the group follows the exact path */
+  offset-path: path("M1154.72 306.424H196.28C114.977 306.424 49.0684 240.515 49.0684 159.212C49.0684 77.9092 114.977 12 196.28 12H1154.72C1236.02 12 1301.93 77.9092 1301.93 159.212C1301.93 240.515 1236.02 306.424 1154.72 306.424Z");
+  animation: move-along-path 6s linear infinite;
+  offset-distance: 0%; /* Start at the beginning of the path */
+}
+
+@keyframes move-along-path {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
